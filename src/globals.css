@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cascadia-Code';
+  src: url('./assets/fonts/cascadia.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comic-Sans';
+  src: url('./assets/fonts/comic-sans.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  body {
+    @apply font-inter bg-[#ededee] min-h-screen dark:bg-dark-primary dark:text-white
+  }
+  
+  .max-contaner{
+    @apply pt-28 flex-1 w-full mx-auto md:max-w-3xl xl:max-w-5xl;
+  }
+  
+  .padding-container {
+    @apply px-6 pb-10 md:px-0;
+  }
+
+  .heading1 {
+    @apply text-[45px] leading-[67.2px] font-bold dark:text-white;
+  }
+
+  .heading2 {
+    @apply font-bold text-[35px] leading-[50.4px] dark:text-white;
+  }
+
+  .heading3 {
+    @apply font-bold sm:text-[30px] sm:leading-[33.6px] text-[28px] leading-[40px] tracking-[-0.25%] dark:text-white;
+  }
+
+  .heading4 {
+    @apply font-semibold text-[20px] leading-[26px] tracking-[0.25%] dark:text-white;
+  }
+  
+  /* Text */
+  .body-text {
+    @apply text-[14px] md:text-[20px] text-gray-600 font-normal leading-[20.8px] dark:text-gray-300;
+  }
+  
+  .body-regular {
+    @apply text-lg md:text-[22px] text-gray-600 tracking-wide dark:text-gray-300;
+  }
+  
+  .body-semibold {
+    @apply text-[16px] md:text-[22px] text-gray-700 font-semibold leading-[20.8px] dark:text-gray-300;
+  }
+  
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-start {
+    @apply flex justify-start items-start;
+  }
+
+  .flex-end {
+    @apply flex justify-end;
+  }
+  
+  .btn-base {
+    @apply px-3 text-white rounded-md font-medium md:text-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-orange-600 hover:bg-orange-700/90 disabled:bg-orange-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-800 hover:bg-gray-900 disabled:bg-gray-600 dark:bg-gray-100 dark:text-gray-700;
+  }
+  
+  .header {
+    @apply fixed top-0 left-0 right-0 h-20 backdrop-blur-lg px-6 flex items-center justify-between md:px-10;
+  }
+  
+  .hero-gradient-effect {
+    @apply absolute top-10 right-10 bg-gradient-to-b from-orange-500 to-rose-400 h-[70%] w-[30%] blur-2xl -z-10 opacity-10 md:h-[30%] md:top-32
+  }
+  
+  .input-field {
+    @apply w-full px-4 rounded-md border-[1px] bg-white border-gray-600 outline-0 placeholder:text-gray-600 dark:border-white dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300;
+  }
+  
+  .form-field {
+    @apply mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 sm:text-sm outline-0 dark:bg-dark-secondary ;
+  }
+  
+  .profile-form-submit-btn {
+    @apply bg-gray-800 text-white px-4 py-2 rounded dark:bg-white dark:text-gray-700
+  }
+  
+  .form-label {
+    @apply block text-gray-700 mb-2 dark:text-gray-300 md:text-lg;
+  }
+  
+    /* Text Gradient */
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent
+  }
+}
+
