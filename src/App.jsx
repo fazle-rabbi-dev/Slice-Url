@@ -7,6 +7,7 @@ import AppRoutes from "./routes";
 import { useUserStore } from "@/stores";
 import { useThemeStore } from "@/stores";
 import { countVisitor } from "@/lib/api";
+const ENV_MODE = import.meta.env.VITE_ENV_MODE;
 
 export default function App() {
 	const [searchParams] = useSearchParams();
@@ -17,10 +18,12 @@ export default function App() {
 
 	useEffect(() => {
 		// Initiate Eruda console
-		eruda.init({
-			element: document.getElementById("console"),
-			tools: ["console"],
-		});
+		if(ENV_MODE === "dev") {
+  		eruda.init({
+  			element: document.getElementById("console"),
+  			tools: ["console"],
+  		});
+		}
 
 		// Update Auth & Theme State
 		(async () => {
