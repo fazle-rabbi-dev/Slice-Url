@@ -5,8 +5,8 @@ import { twMerge } from "tailwind-merge";
 import { clsx } from "clsx";
 
 import { LOCAL_CLIENT_ADDRESS } from "@/constants";
-const VITE_ENV_MODE = import.meta.env.VITE_ENV_MODE;
-const VITE_REMOTE_CLIENT_ADDRESS = import.meta.env.VITE_REMOTE_CLIENT_ADDRESS;
+const ENV_MODE = import.meta.env.VITE_ENV_MODE;
+const CLIENT_ADDRESS = ENV_MODE === "dev" ? LOCAL_CLIENT_ADDRESS : import.meta.env.VITE_REMOTE_CLIENT_ADDRESS;
 
 
 export const cn = (...inputs) => {
@@ -161,10 +161,7 @@ export const copyToClipboard = async text => {
 };
 
 export const generateShortUrl = link => {
-	const shortUrl =
-		VITE_ENV_MODE && "dev"
-			? `${LOCAL_CLIENT_ADDRESS}/${link.shortId}`
-			: `${REMOTE_CLIENT_ADDRESS}/${link.shortId}`;
+	const shortUrl = `${CLIENT_ADDRESS}/${link.shortId}`
 	return shortUrl;
 };
 
