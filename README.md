@@ -1,5 +1,4 @@
 #  🔗 Slice-URL 
-> `Free and Easy-to-Use URL Shortener for Efficient Link Management`
 
 <img width="100%" src="/public/images/thumbnail.jpg" alt="Slice-Url" />
 
@@ -43,7 +42,7 @@ Simplify your links with Slice URL, a free and user-friendly URL shortener app b
 - 🌙 **Dark Mode**: Enjoy a dark theme option for a better viewing experience in low light.
 
 ### .env Setup
-- View `.env.sample` file
+View `.env.sample` file
 
 ### 📬 Connect with me
 > Let's connect! Reach out for collaborations, projects, or just a friendly chat.
