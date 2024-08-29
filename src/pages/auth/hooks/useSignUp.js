@@ -28,7 +28,7 @@ const useSignup = () => {
 			const res = await createAccount(data);
 
 			if (res?.success) {
-				showToast(res.message);
+				showToast("Signup is successful. Check your email inbox to confirm your account.", 5000);
 				successSound.play();
 				navigate("/sign-in");
 			} else {

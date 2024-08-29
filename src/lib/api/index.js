@@ -77,6 +77,19 @@ export const createUserAccount = async userData => {
 	return response;
 };
 
+export const confirmAccount = async (userData) => {
+	if(!userData || !userData.username || !userData.token) return false;
+	const { username, token } = userData;
+	
+	const data = {
+		path: `/auth/confirm-account?username=${username}&token=${token}`,
+		method: "GET",
+	};
+
+	const response = await ApiRequest(data);
+	return response;
+};
+
 // Login Account
 export const loginUserAccount = async userData => {
 	const data = {

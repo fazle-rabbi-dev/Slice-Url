@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient, useInfiniteQuery } from "@tansta
 import QUERY_KEYS from "./queryKeys";
 import {
 	createUserAccount,
+	confirmAccount,
 	loginUserAccount,
 	socialLogin,
 	getUser,
@@ -22,6 +23,12 @@ import {
 export const useCreateUserAccount = () => {
 	return useMutation({
 		mutationFn: user => createUserAccount(user),
+	});
+};
+
+export const useConfirmAccount = () => {
+	return useMutation({
+		mutationFn: data => confirmAccount(data),
 	});
 };
 

@@ -83,6 +83,7 @@ export const Profile = () => {
 
 	useEffect(() => {
 		if (user) {
+			console.log({ user })
 			setFullName(user.fullName);
 			setUsername(user.username);
 		}

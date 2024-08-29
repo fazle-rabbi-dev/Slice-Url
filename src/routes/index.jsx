@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Home, HandleRedirect, NotFound } from "@/pages/public";
+import { Home, HandleRedirect, ConfirmAccount, NotFound } from "@/pages/public";
 import { Signin, Signup } from "@/pages/auth";
 import { Dashboard, LinkDetails, Profile } from "@/pages/private";
 import { RootLayout, AuthLayout, PrivateLayout } from "@/components/layout";
@@ -14,6 +14,10 @@ const AppRoutes = () => {
 				<Route
 					index
 					element={<Home />}
+				/>
+				<Route
+					path="/confirm-account"
+					element={<ConfirmAccount />}
 				/>
 				<Route
 					path="/:shortId"

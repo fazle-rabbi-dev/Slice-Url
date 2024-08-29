@@ -139,7 +139,7 @@ export const LinkDetails = () => {
   						</p>
   						<span className="block font-semibold mb-1">Example:</span>
   						<code className="block break-all bg-white shadow text-gray-800 p-2 rounded mb-4">
-  							http://localhost:5173/n509af3?source=demo
+  							http://slice-url.vercel.app/n509af3?source=demo
   						</code>
   						<p>
   							Click the "Display All Clicks Info" button below to view detailed insights on link

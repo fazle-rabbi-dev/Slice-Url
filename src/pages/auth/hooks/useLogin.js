@@ -2,11 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import { signInWithGoogle, signInWithGithub } from "@/lib/firebase/api";
 import { useLoginUserAccount, useSocialLogin } from "@/lib/react-query";
-import { showToast, showAlert, LocalStorage } from "@/lib/utils";
+import { showToast, showAlert, playSound, LocalStorage } from "@/lib/utils";
 import { useUserStore } from "@/stores";
 
-const successSound = new Audio('/sounds/success.wav');
-const errorSound = new Audio('/sounds/oops.wav');
 
 const Capitalize = platform => {
 	return platform.split("")[0].toUpperCase() + platform.slice(1);
@@ -33,13 +31,13 @@ const useLogin = () => {
 
 		if (success) {
 			showToast(message);
-			successSound.play();
+			playSound.success();
 			LocalStorage.setItem("user", responseData.user);
 			updateAuthStatus(responseData.user);
 			navigate("/dashboard");
 		} else {
 			showAlert("Error!", message, "error");
-			errorSound.play();
+			playSound.error();
 			console.log({
 				error: message,
 				location: "SignIn.jsx >> handleEmaiPassLogin",
@@ -75,7 +73,7 @@ const useLogin = () => {
 
 			if (success) {
 				showToast(message);
-				successSound.play()
+				playSound.success();
 				LocalStorage.setItem("user", responseData.user);
 				updateAuthStatus(responseData.user);
 				navigate("/dashboard");
@@ -84,7 +82,7 @@ const useLogin = () => {
 			}
 		} catch (error) {
 			showAlert("Error!", error.message, "error");
-			errorSound.play()
+			playSound.error()
 			console.log({
 				error,
 				location: "useLogin.js >> handleSocialLogin",

@@ -6,7 +6,10 @@
 Simplify your links with Slice URL, a free and user-friendly URL shortener app built with React.js & Express.js. Easily shorten, customize, and track your links to boost engagement and optimize digital marketing strategies. Get started now to streamline your online presence!
 
 ### Live Demo 🎉
-- Explore the live version of Slice-URL <a target="_blank" href="https://slice-url.vercel.app">here</a>.
+- Explore the live version of Slice-URL at: 
+  - <a target="_blank" href="https://slice-url.vercel.app">slice-url.vercel.app</a>
+  - <a target="_blank" href="https://frlinks.vercel.app">frlinks.vercel.app</a>
+  - <a target="_blank" href="https://r-su.vercel.app">r-su.vercel.app</a>
 
 - Explore Backend code <a href="https://slice-url-api.vercel.app">here.</a>
 

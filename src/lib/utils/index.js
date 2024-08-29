@@ -7,7 +7,8 @@ import { clsx } from "clsx";
 import { LOCAL_CLIENT_ADDRESS } from "@/constants";
 const ENV_MODE = import.meta.env.VITE_ENV_MODE;
 const CLIENT_ADDRESS = ENV_MODE === "dev" ? LOCAL_CLIENT_ADDRESS : import.meta.env.VITE_REMOTE_CLIENT_ADDRESS;
-
+import successSound from "@/assets/sounds/success.wav";
+import errorSound from "@/assets/sounds/oops.wav";
 
 export const cn = (...inputs) => {
 	return twMerge(clsx(inputs));
@@ -167,13 +168,13 @@ export const generateShortUrl = link => {
 
 class playSound {
 	static error() {
-		const errorSound = new Audio("../../assets/sounds/oops.wav");
-		errorSound.play();
+		const error = new Audio(errorSound);
+		error.play();
 	}
 
 	static success() {
-		const successSound = new Audio("../../assets/sounds/success.wav");
-		successSound.play();
+		const success = new Audio(successSound);
+		success.play();
 	}
 }
 

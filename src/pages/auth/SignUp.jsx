@@ -54,6 +54,7 @@ export const Signup = () => {
 					className="btn-secondary h-14"
 					disableButton={disableButton()}
 					full
+					loadingText="Signing Up.."
 				/>
 
 				<FormFooter
