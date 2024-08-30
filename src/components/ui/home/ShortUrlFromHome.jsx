@@ -64,7 +64,7 @@ export const ShortUrlFromHome = () => {
 
 								<button
 									className="p-1 rounded bg-white text-gray-600 shadow"
-									onClick={() => copyToClipboard(shortLink.shortUrl)}
+									onClick={() => copyToClipboard(generateShortUrl(shortLink))}
 								>
 									<Clipboard size={17} />
 								</button>
