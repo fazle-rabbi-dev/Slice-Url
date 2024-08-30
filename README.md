@@ -10,7 +10,7 @@ Simplify your links with Slice URL, a free and user-friendly URL shortener app b
   - <a target="_blank" href="https://frlinks.vercel.app">frlinks.vercel.app</a>
   - <a target="_blank" href="https://r-su.vercel.app">r-su.vercel.app</a>
 
-- Explore Backend code <a href="https://slice-url-api.vercel.app">here.</a>
+- Explore Backend code <a href="https://github.com/fazle-rabbi-dev/Slice-Url-Api">here.</a>
 
 ### 🔴 Unveiling the Journey of Building Slice-URL
 > [!Note]
