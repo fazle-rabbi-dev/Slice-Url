@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import { Button } from "@/components";
 import useShortenUrl from "@/pages/public/hooks/useShortenUrl.js";
-import { copyToClipboard } from "@/lib/utils"
+import { copyToClipboard } from "@/lib/utils";
+import { generateShortUrl } from "@/lib/utils";
 
 export const ShortUrlFromHome = () => {
 	const { link, handleChange, handleShortenLink, isLoading, createdShortUrls } = useShortenUrl();
@@ -55,10 +56,10 @@ export const ShortUrlFromHome = () => {
 							>
 								<Link
 									className="flex flex-wrap items-center gap-2 body-text"
-									to={shortLink.shortUrl}
+									to={generateShortUrl(shortLink)}
 									target="_blank"
 								>
-									<span className="break-all text-orange-800">{shortLink.shortUrl}</span>
+									<span className="break-all text-orange-800">{generateShortUrl(shortLink)}</span>
 								</Link>
 
 								<button
