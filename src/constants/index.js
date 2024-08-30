@@ -1,1 +1,5 @@
-export const LOCAL_CLIENT_ADDRESS = "http://localhost:5173"  
+export const DOMAINS = [
+  "slice-url.vercel.app",
+  "frlinks.vercel.app",
+  "r-su.vercel.app"
+];

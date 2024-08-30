@@ -4,11 +4,9 @@ import Swal from "sweetalert2";
 import { twMerge } from "tailwind-merge";
 import { clsx } from "clsx";
 
-import { LOCAL_CLIENT_ADDRESS } from "@/constants";
-const ENV_MODE = import.meta.env.VITE_ENV_MODE;
-const CLIENT_ADDRESS = ENV_MODE === "dev" ? LOCAL_CLIENT_ADDRESS : import.meta.env.VITE_REMOTE_CLIENT_ADDRESS;
 import successSound from "@/assets/sounds/success.wav";
 import errorSound from "@/assets/sounds/oops.wav";
+import { DOMAINS } from "@/constants";
 
 export const cn = (...inputs) => {
 	return twMerge(clsx(inputs));
@@ -162,8 +160,32 @@ export const copyToClipboard = async text => {
 };
 
 export const generateShortUrl = link => {
-	const shortUrl = `${CLIENT_ADDRESS}/${link.shortId}`
+	if(!link) return null;
+	const hostname = window.location.hostname;
+	
+	let baseUrl;
+	if(hostname === "localhost"){
+	  baseUrl = `http://localhost:5173`
+	} else {
+	  baseUrl = `https://${hostname}`
+	}
+	
+	const shortUrl = `${baseUrl}/${link.alias || link.shortId}`
 	return shortUrl;
+};
+
+export const generateAltShortUrl = link => {
+	if(!link) return null;
+	
+	const hostname = window.location.hostname;
+	const altDomains = DOMAINS?.filter(domain => domain !== hostname);
+	
+	const altShortUrls = altDomains.map(domain => {
+	  const shortUrl = `https://${domain}/${link.shortId}`
+	  return shortUrl;
+	});
+	console.log({ altShortUrls })
+	return altShortUrls;
 };
 
 class playSound {

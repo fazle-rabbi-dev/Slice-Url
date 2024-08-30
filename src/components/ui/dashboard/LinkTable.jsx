@@ -54,7 +54,7 @@ export const LinkTable = ({ Links }) => {
 		}
 		return buttons;
 	};
-
+  
 	if (Links?.length === 0) {
 		return (
 			<span className="text-orange-800 text-sm font-light">
@@ -62,7 +62,7 @@ export const LinkTable = ({ Links }) => {
 			</span>
 		);
 	}
-
+  
 	return (
 		<div className="mt-6">
 			<div className="bg-white border border-gray-300 rounded-md dark:bg-dark-secondary">
