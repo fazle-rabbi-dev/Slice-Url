@@ -37,10 +37,10 @@ export const Header = () => {
 
 	return (
 		<header
-			className="header bg-white/80 dark:bg-dark-secondary/80"
+			className="header flex gap-2 bg-white/80 dark:bg-dark-secondary/80"
 		> 
 		  {/* Left Part */}
-			<div className="flex items-center gap-5">
+			<div className="flex-1 flex items-center gap-5">
 				<button
 					onClick={() => setOpenDrawer(true)}
 					className="md:hidden"
@@ -53,7 +53,7 @@ export const Header = () => {
 			</div>
       
       {/* Right Part */}
-			<div className="flex gap-3 justify-center items-center">
+			<div className="w-[75px] flex gap-3 justify-center items-center">
 				{isLoggedIn && (
 					<>
 					<button

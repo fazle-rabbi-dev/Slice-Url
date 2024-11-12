@@ -9,17 +9,17 @@ export const PrivateLayout = () => {
   const { isLoading, isLoggedIn, user } = useUserStore(state => state);
   const isOnDarkMode = useThemeStore(state => state.isOnDarkMode);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
-    if(!isLoading && !isLoggedIn){
+    if (!isLoading && !isLoggedIn) {
       return navigate("/sign-in", { replace: true });
     }
-  },[isLoggedIn, isLoading]);
-  
-  if(isLoading) {
+  }, [isLoggedIn, isLoading]);
+
+  if (isLoading) {
     return <PageLoader color={isOnDarkMode && "white"} />;
   }
-  
+
   return (
     <>
       <Header />
